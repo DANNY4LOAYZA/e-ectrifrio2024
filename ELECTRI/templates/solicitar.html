@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Solicitud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        form {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulario de Solicitud</h1>
+    </header>
+    <main>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <label for="nombre">Nombre del Cliente</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="tipo-reparacion">Seleccione el Tipo de Reparación</label>
+            <select id="tipo-reparacion" name="tipo-reparacion" required>
+                <option value="aire-acondicionado">Aires Acondicionados</option>
+                <option value="nevera">Neveras</option>
+                <option value="lavadora">Lavadoras</option>
+            </select>
+            
+            <label for="marca">Seleccione la Marca</label>
+            <select id="marca" name="marca" required>
+                <option value="marca1">Marca 1</option>
+                <option value="marca2">Marca 2</option>
+                <option value="marca3">Marca 3</option>
+                <option value="marca4">Marca 4</option>
+                <option value="marca5">Marca 5</option>
+                <option value="marca6">Marca 6</option>
+            </select>
+            
+            <label for="alta-eficiencia">¿Es Alta Eficiencia?</label>
+            <select id="alta-eficiencia" name="alta-eficiencia" required>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            
+            <label for="descripcion-problema">Describa el Problema</label>
+            <textarea id="descripcion-problema" name="descripcion-problema" required></textarea>
+            
+            <button type="submit">Enviar Solicitud</button>
+            <a href="{% url 'index' %}">Regresar</a>
+        </form>
+    </main>
+</body>
+</html>

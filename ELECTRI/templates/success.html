@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constancia de Solicitud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Constancia de Solicitud</h1>
+        <p>Gracias por enviar tu solicitud. Nos pondremos en contacto contigo pronto.</p>
+        
+        <!-- Detalles de la Solicitud -->
+        <h2>Detalles de la Solicitud:</h2>
+        <p><strong>Nombre:</strong> {{ solicitud.nombre }}</p>
+        <p><strong>Tipo de Reparación:</strong> {{ solicitud.tipo_reparacion }}</p>
+        <p><strong>Marca:</strong> {{ solicitud.marca }}</p>
+        <p><strong>Alta Eficiencia:</strong> {% if solicitud.alta_eficiencia %}Sí{% else %}No{% endif %}</p>
+        <p><strong>Descripción del Problema:</strong> {{ solicitud.descripcion_problema }}</p>
+        
+        <!-- Botón de impresión -->
+        <button class="btn" onclick="window.print()">Imprimir</button>
+    </div>
+</body>
+</html>
